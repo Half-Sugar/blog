@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>蚊子的BUG合集</title>
+    <link rel="Shortcut Icon" href="../static/img/icon.png" th:href="@{/img/icon.png}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="../static/css/me3d.css" th:href="@{/css/me3d.css}">
+</head>
+<body>
+
+<!--    <div class="Welcome" align="left">-->
+<!--        &lt;!&ndash; 居中 &ndash;&gt;-->
+<!--        <div style="/*background-color: rgb(0,255,0);*/width: 500px;height: 200px;color: rgb(255,255,255);font-family: FangSong " align="center">-->
+<!--            Hi!  Welcome-->
+<!--            <div style="font-size: 25px">1111111111</div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!-- 导航 -->
+    <nav th:replace="_fragments :: menu(5)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i> 首页</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i> 分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i> 标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i> 归档</a>
+                <a href="#" class="active m-item item m-mobile-hide"><i class="info icon"></i> 关于我</a>
+                <div class="right m-item item m-mobile-hide">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="Search.....">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon">
+
+            </i>
+        </a>
+    </nav>
+
+    <!-- 中间内容 -->
+    <div class="m-container-small m-padded-tb-big">
+
+        <section>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+
+        <div class="ui container">
+
+
+<!--            <br><br><br><br><br><br><br>-->
+
+
+
+
+            <div class="ui padded segment" style="margin-top: 18em !important;">
+                <div class="ui center aligned icon" style="margin: -8rem auto 1rem;">
+                    <img class="ui small centered circular image" src="https://picsum.photos/id/459/600/600">
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="font-size: 1.75rem;font-weight: bold;">蚊子</div>
+                    <div style="font-size: 1rem; padding: 20px;">html / java / 游戏爱好者</div>
+                    <div class="ui bottom attached">
+                        <a href="#" class="ui circular icon button"><i class="github icon"></i></a>
+                        <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+                        <a href="#" class="ui qq circular icon button" data-content="1563564384" data-position="bottom center"><i class="qq icon"></i></a>
+                    </div>
+                </div>
+
+                <div style="font-size: 1rem; padding: 50px 10px 40px 10px;">
+                    <p>热爱编程，喜欢折腾，正在探索高效学习编程技术的方法...</p>
+                </div>
+
+
+                <div class="ui wechat-qr flowing popup transition hidden">
+                    <img src="../static/img/ewm_wx.jpg" th:src="@{/img/ewm_wx.jpg}" alt="" class="ui rounded image" style="width: 110px">
+                </div>
+
+            </div>
+
+
+<!--            <di class="ui stackable grid">-->
+<!--                &lt;!&ndash;  左边图片  &ndash;&gt;-->
+<!--                <div class="eleven wide column">-->
+<!--                    <img src="https://picsum.photos/id/1004/800/600" alt="" class="ui rounded image">-->
+<!--                </div>-->
+<!--                &lt;!&ndash;  右边信息  &ndash;&gt;-->
+<!--                <div class="five wide column">-->
+<!--                    <div class="ui top attached segment">-->
+<!--                        <di class="ui header">关于我</di>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;  个人说明  &ndash;&gt;-->
+<!--                    <div class="ui attached segment">-->
+<!--                        <p>关于我的一些说明</p>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;  个人标签  &ndash;&gt;-->
+<!--                    <div class="ui attached segment">-->
+<!--                        <div class="ui orange basic left pointing label m-margin-tb-tiny">游戏</div>-->
+<!--                        <div class="ui orange basic left pointing label m-margin-tb-tiny">玩</div>-->
+<!--                        <div class="ui orange basic left pointing label m-margin-tb-tiny">么有</div>-->
+<!--                        <div class="ui orange basic left pointing label m-margin-tb-tiny">唱歌</div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;  技术标签  &ndash;&gt;-->
+<!--                    <div class="ui attached segment">-->
+<!--                        <div class="ui teal basic left pointing label m-margin-tb-tiny">java</div>-->
+<!--                        <div class="ui teal basic left pointing label m-margin-tb-tiny">html</div>-->
+<!--                        <div class="ui teal basic left pointing label m-margin-tb-tiny">html</div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;  链接  &ndash;&gt;-->
+<!--                    <div class="ui bottom attached segment">-->
+<!--                        <a href="https://semantic-ui.com/elements/button.html" class="ui circular icon button"><i class="github icon"></i></a>-->
+<!--                        <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>-->
+<!--                        <a href="#" class="ui qq circular icon button" data-content="1563564384" data-position="bottom center"><i class="qq icon"></i></a>-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash;  二维码图片  &ndash;&gt;-->
+<!--                    <div class="ui wechatQR flowing popup transition hidden">-->
+<!--                        <img src="../static/img/ewm.jpg" alt="" class="ui rounded image" style="width: 120px">-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </di>-->
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <!--    底部    -->
+    <div class="ui segment write_box_small">
+        <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="https://picsum.photos/id/237/200/200" class="ui rounded image" alt="" style="width: 110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事(User Story)</a>
+                        <a href="#" class="item">失败要趁早</a>
+                        <a href="#" class="item">关于</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email：</a>
+                        <a href="#" class="item">QQ:</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">Blog</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">积极的人在每一次忧患中都看到一个机会，而消极的人则在每个机会都看到某种忧患。</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">个人博客</p>
+        </div>
+    </footer>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<!--/*/</th:block>/*/-->
+
+<!--  移动端点击三条横线出现标题等  -->
+<script>
+    $('.menu.toggle').click(function (){
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.qq').popup();
+
+    $('.wechat').popup({
+        popup : $('.wechat-qr.popup'),
+        //on : 'click',
+        position: 'bottom center'
+    });
+</script>
+
+</body>
+</html>

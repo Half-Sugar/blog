@@ -1,0 +1,120 @@
+@CHARSET "UTF-8";
+
+	body{
+		perspective: 1500px;
+	}
+
+	section{
+		position: relative;
+		width: 150px;
+		height: 100px;
+		margin: 100px auto;
+		transform-style: preserve-3d;
+		
+		/** 添加动画效果 */
+		animation: rotate 30s linear infinite;
+		background:url("https://picsum.photos/id/187/150/100");
+	}
+	
+	/** 鼠标放上去停止选择 */
+	section:hover{
+		animation-play-state:paused;
+	}
+	
+	/** 动画 */
+	@keyframes rotate{
+		0%{
+			transform: rotateY(0);
+		}
+		100%{
+			transform: rotateY(360deg);
+		}
+	}
+	
+	section div{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		/*background:url("https://picsum.photos/id/1014/150/100") no-repeat;*/
+	}
+	
+	/** 第一个盒子 */
+	section div:nth-child(1){
+		background:url("https://picsum.photos/id/1014/150/100") no-repeat;
+		transform:translateZ(400px);
+	}
+	
+	/** 第二个盒子 */
+	section div:nth-child(2){
+		background:url("https://picsum.photos/id/100/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(30deg) translateZ(400px);
+	}
+	
+	/** 第三个盒子 */
+	section div:nth-child(3){
+		background:url("https://picsum.photos/id/1002/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(60deg) translateZ(400px);
+	}
+	
+	/** 第四个盒子 */
+	section div:nth-child(4){
+		background:url("https://picsum.photos/id/1008/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(90deg) translateZ(400px);
+	}
+	
+	/** 第五个盒子 */
+	section div:nth-child(5){
+		background:url("https://picsum.photos/id/1019/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(120deg) translateZ(400px);
+	}
+	
+	/** 第六个盒子 */
+	section div:nth-child(6){
+		background:url("https://picsum.photos/id/1021/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(150deg) translateZ(400px);
+	}
+	
+	/** 第七个盒子 */
+	section div:nth-child(7){
+		background:url("https://picsum.photos/id/1048/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(180deg) translateZ(400px);
+	}
+	
+	/** 第八个盒子 */
+	section div:nth-child(8){
+		background:url("https://picsum.photos/id/1051/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(210deg) translateZ(400px);
+	}
+	/** 第九个盒子 */
+	section div:nth-child(9){
+		background:url("https://picsum.photos/id/1052/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(240deg) translateZ(400px);
+	}
+	/** 第十个盒子 */
+	section div:nth-child(10){
+		background:url("https://picsum.photos/id/111/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(270deg) translateZ(400px);
+	}
+	/** 第十一个盒子 */
+	section div:nth-child(11){
+		background:url("https://picsum.photos/id/112/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(300deg) translateZ(400px);
+	}
+	/** 第十二个盒子 */
+	section div:nth-child(12){
+		background:url("https://picsum.photos/id/121/150/100") no-repeat;
+		/** 先旋转好 在移动 */
+		transform:rotateY(330deg) translateZ(400px);
+	}

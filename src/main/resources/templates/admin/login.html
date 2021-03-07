@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>-_- 博客管理登录</title>
+    <link rel="Shortcut Icon" href="../static/img/icon.png" th:href="@{/img/icon.png}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.2/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="../../static/css/login.css" th:href="@{/css/login.css}">
+</head>
+<body style="overflow:hidden ">
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="full-screen">
+        <video src="../../static/img/mv.mp4" th:src="@{/img/mv.mp4}" autoplay muted loop></video>
+        <div class="m-container-small m-padded-tb-massive" style="max-width: 30em !important; /*opacity: 0.7 !important;*/">
+            <div class="ur container">
+                <div class="ui middle aligned center aligned grid">
+                    <div class="column"  style="width: 320px !important;">
+
+                        <a href="#" th:href="@{/}">
+                            <h2 class="ui pink image header">
+                                <!--                        <img src="assets/images/logo.png" class="image">-->
+                                <div class="content">Blog</div>
+                            </h2>
+                        </a>
+                        <br>
+                        <br>
+                        <form class="ui large form" method="post" action="#" th:action="@{/admin/login}">
+                            <div class="ui stacked">
+                                <div class="field">
+                                    <div class="ui small left icon input">
+                                        <i class="user pink icon"></i>
+                                        <input type="text" name="username" class="inputBox"  placeholder="管理员用户名">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui small left icon input">
+                                        <i class="lock pink icon"></i>
+                                        <input type="password" name="password" class="inputBox"  placeholder="密码">
+                                    </div>
+                                </div>
+                                <button class="ui small fluid large orange submit button submitButton" style="margin-top: 5em !important; opacity: 0.7 !important; border-radius: 30px !important;">登    录</button>
+                            </div>
+
+                            <div class="ui error mini message"></div>
+
+                            <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></div>
+
+                        </form>
+
+                        <!--                    <div class="ui message">-->
+                        <!--                        没有账号？ <a href="#">注    册</a>-->
+                        <!--                    </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+    <!--/*/<th:block th:replace="_fragments :: script">/*/-->
+    <!--/*/</th:block>/*/-->
+
+
+    <script>
+        $('.ui.form').form({
+           fields: {
+               username: {
+                   identifier: 'username',
+                   rules:[{
+                       type : 'empty',
+                       prompt: '请输入用户名'
+                   }]
+               },
+               password: {
+                   identifier: 'password',
+                   rules:[{
+                       type : 'empty',
+                       prompt: '请输入密码'
+                   }]
+               }
+           }
+        });
+    </script>
+</body>
+</html>

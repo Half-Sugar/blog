@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>蚊子的BUG合集</title>
+    <link rel="Shortcut Icon" href="../static/img/icon.png" th:href="@{/img/icon.png}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+
+    <link media="all" href="../static/css/mycss/bolo-sakura/base.css" th:href="@{/css/mycss/bolo-sakura/base.css}" rel="stylesheet"/>
+    <script>/*Initial Variables*/
+        var mashiro_global = {};
+        var mashiro_option = new function () {
+            this.NProgressON = false;
+            this.site_name = "蚊子的BUG合集";
+        };;
+        mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.7.5/css/lib.min.css";
+        mashiro_option.head_notice = "on";
+        /*End of Initial Variables*/
+        console.info("%c Bolo %c", "background:#24272A; color:#ffffff", "", "https://github.com/adlered/bolo-solo");
+        mashiro_option.land_at_home = true;
+    </script>
+
+
+    <script defer src="../static/js/bolo-sakura/js/main.js" th:src="@{/js/bolo-sakura/js/main.js}"></script>
+
+</head>
+<body>
+
+<!-- 导航 -->
+<nav th:replace="_fragments :: menu(1)" class="ui  attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui secondary stackable menu">
+            <h2 class="ui teal header item">Blog</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i> 首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i> 分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i> 标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i> 归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i> 关于我</a>
+            <div class="right m-item item m-mobile-hide">
+                <div class="ui icon transparent input">
+                    <input type="text" placeholder="Search.....">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon">
+
+        </i>
+    </a>
+</nav>
+
+
+
+<div class="headertop filter-dot">
+    <!--背景前的文字-->
+    <figure id="centerbg" class="centerbg" style="height: 700px">
+        <div class="focusinfo no-select">
+            <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="Hi!  欢迎">Hi!  欢迎</h1>
+            <div class="header-info">
+                <p>
+                    <i class="quote left icon"></i> 愿历尽千帆,归来仍少年 <i class="quote right icon"></i>
+                </p>
+                <div class="top-social_v2">
+                    <style>
+                        .pc .user__site {
+                            width: 32px;
+                            height: 32px;
+                            float: left;
+                            background-color: #f1f2f7;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                            opacity: 0.6;
+                        }
+
+                        .pc .user__site svg {
+                            vertical-align:middle;
+                            width: 20px;
+                            height: 20px;
+                        }
+                    </style>
+                    <div class="pc">
+                        <!--                            <a href=""-->
+                        <!--                               title=""-->
+                        <!--                               class="user__site"-->
+                        <!--                               target="_blank" rel="noopener nofollow">-->
+                        <!--                                <svg viewBox="0 0 32 32" width="100%" height="100%">-->
+                        <!--                                    <path fill="#d23f31" style="fill: var(&#45;&#45;color1, #d23f31)"-->
+                        <!--                                          d="M5.787 17.226h17.033l5.954 9.528c0.47 0.752 0.003 1.361-1.042 1.361h-15.141z"></path>-->
+                        <!--                                    <path d="M10.74 3.927h17.033c1.045 0 1.512 0.609 1.042 1.361l-5.954 9.528h-19.872l6.379-10.209c0.235-0.376 0.849-0.681 1.372-0.681z"></path>-->
+                        <!--                                    <path d="M2.953 17.226h2.839l6.804 10.889h-1.892c-0.523 0-1.137-0.305-1.372-0.681z"></path>-->
+                        <!--                                </svg>-->
+                        <!--                            </a>-->
+
+                        <a href="#"
+                           title="#"
+                           class="user__site"
+                           target="_blank" rel="noopener nofollow">
+                            <svg viewBox="0 0 32 32" width="100%" height="100%">
+                                <path d="M16 0.331c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"></path>
+                            </svg>
+                        </a>
+
+                        <a href="#"
+                           title="1563564384"
+                           target="_blank"
+                           class="user__site"
+                           rel="noopener nofollow">
+                            <svg viewBox="0 0 32 32" width="100%" height="100%">
+                                <path d="M4.821 14.393c-0.125-0.304-0.143-0.607-0.143-0.929 0-0.5 0.321-1.304 0.625-1.679-0.018-0.464 0.179-1.411 0.536-1.714 0-3.304 2.554-7.464 5.536-8.893 1.839-0.875 3.768-1.179 5.786-1.179 1.571 0 3.286 0.375 4.75 0.982 4.196 1.768 5.143 5.054 6.036 9.25l0.018 0.089c0.518 0.786 0.982 1.714 0.982 2.679 0 0.482-0.321 0.964-0.321 1.393 0 0.036 0.107 0.179 0.125 0.214 1.536 2.268 2.929 4.732 2.929 7.554 0 0.625-0.339 2.804-1.339 2.804-0.696 0-1.464-1.696-1.714-2.161-0.018-0.018-0.036-0.018-0.054-0.018l-0.089 0.071c-0.571 1.482-1.196 2.875-2.357 3.982 1.018 0.982 2.661 0.893 2.964 2.589-0.089 0.196-0.054 0.411-0.196 0.607-1.018 1.536-3.75 1.732-5.393 1.732-2.179 0-3.946-0.571-6-1.179-0.429-0.125-1.071-0.054-1.536-0.107-1.089 1.196-3.75 1.518-5.286 1.518-1.357 0-6.607-0.089-6.607-2.411 0-1 0.214-1.286 0.911-1.929 0.554-0.107 0.964-0.411 1.607-0.446 0.089 0 0.161-0.018 0.25-0.036 0.018-0.018 0.036-0.018 0.036-0.071l-0.036-0.054c-1.232-0.286-2.964-3.393-3.232-4.679l-0.089-0.054c-0.125 0-0.179 0.268-0.214 0.357-0.393 0.911-1.321 1.893-2.357 2h-0.018c-0.143 0-0.089-0.143-0.196-0.179-0.25-0.589-0.411-1.125-0.411-1.786 0-3.571 1.714-6.214 4.5-8.321z"></path>
+                            </svg>
+                        </a>
+                        <a href="javascript:alert('微信号：')"
+                           class="user__site"
+                           title="tangcuyuha">
+                            <svg viewBox="0 0 32 32" width="100%" height="100%">
+                                <path d="M9.062 9.203c0-0.859-0.562-1.422-1.422-1.422-0.844 0-1.703 0.562-1.703 1.422 0 0.844 0.859 1.406 1.703 1.406 0.859 0 1.422-0.562 1.422-1.406zM20.672 17.125c0-0.562-0.562-1.125-1.422-1.125-0.562 0-1.125 0.562-1.125 1.125 0 0.578 0.562 1.141 1.125 1.141 0.859 0 1.422-0.562 1.422-1.141zM16.984 9.203c0-0.859-0.562-1.422-1.406-1.422-0.859 0-1.703 0.562-1.703 1.422 0 0.844 0.844 1.406 1.703 1.406 0.844 0 1.406-0.562 1.406-1.406zM26.906 17.125c0-0.562-0.578-1.125-1.422-1.125-0.562 0-1.125 0.562-1.125 1.125 0 0.578 0.562 1.141 1.125 1.141 0.844 0 1.422-0.562 1.422-1.141zM22.75 10.922c-0.359-0.047-0.719-0.063-1.094-0.063-5.375 0-9.625 4.016-9.625 8.953 0 0.828 0.125 1.625 0.359 2.375-0.359 0.031-0.703 0.047-1.063 0.047-1.422 0-2.547-0.281-3.969-0.562l-3.953 1.984 1.125-3.406c-2.828-1.984-4.531-4.547-4.531-7.656 0-5.391 5.094-9.625 11.328-9.625 5.563 0 10.453 3.391 11.422 7.953zM32 19.687c0 2.547-1.688 4.813-3.969 6.516l0.859 2.828-3.109-1.703c-1.141 0.281-2.281 0.578-3.406 0.578-5.391 0-9.625-3.688-9.625-8.219s4.234-8.219 9.625-8.219c5.094 0 9.625 3.688 9.625 8.219z"></path>
+                            </svg>
+                        </a>
+                        <a target="_blank" href="#"
+                           class="user__site"
+                           title="">
+                            <svg viewBox="0 0 1024 1024" width="100%" height="100%">
+                                <path d="M627.086668 5.114963c28.132297-7.672445 58.822075-7.672445 86.954372 0 33.24726 7.672445 63.937038 23.017334 89.511853 43.477186 10.229926 7.672445 17.902371 15.344889 23.017334 28.132297 7.672445 17.902371 5.114963 38.362223-5.114963 53.707112-7.672445 12.787408-23.017334 23.017334-40.919704 25.574815-12.787408 2.557482-25.574815 0-38.362223-7.672445-5.114963-2.557482-10.229926-10.229926-17.902371-12.787407-17.902371-10.229926-35.804741-20.459852-56.264593-17.902371-15.344889 0-28.132297 7.672445-35.804742 17.902371-10.229926 10.229926-12.787408 23.017334-10.229926 35.804741 7.672445 25.574815 12.787408 53.707112 20.459853 79.281927 51.14963 2.557482 99.741779 15.344889 143.218965 40.919704 40.919704 25.574815 79.281927 58.822075 109.971705 97.184298 25.574815 33.24726 46.034667 71.609483 56.264593 112.529187 12.787408 43.477186 17.902371 89.511853 12.787408 132.989039-2.557482 38.362223-10.229926 74.166964-23.017334 109.971705-33.24726 84.39689-92.069335 161.121336-171.351261 209.713485-56.264593 35.804741-122.759113 58.822075-189.253633 66.49452-46.034667 5.114963-92.069335 5.114963-138.104002-2.557482-94.626816-15.344889-181.581188-61.379556-250.633189-130.431558-66.49452-66.49452-112.529187-153.448891-132.989039-245.518225-7.672445-69.052001-7.672445-138.104002 7.672445-207.156004 17.902371-81.839409 61.379556-161.121336 117.644149-222.500892 48.592149-51.14963 107.414224-89.511853 171.351262-117.64415 7.672445-2.557482 12.787408-5.114963 20.459852-7.672444 15.344889-2.557482 30.689778 0 43.477186 10.229926 17.902371 12.787408 25.574815 33.24726 23.017334 53.707112-2.557482 20.459852-17.902371 38.362223-35.804741 46.034667-63.937038 25.574815-122.759113 69.052001-163.678818 122.759113C205.102218 373.392302 179.527402 432.214377 171.854958 493.593933c-7.672445 61.379556 0 122.759113 20.459852 181.581188 30.689778 84.39689 94.626816 156.006373 173.908743 196.926077 48.592149 25.574815 102.299261 38.362223 156.006373 38.362223 43.477186 0 89.511853-7.672445 130.431558-23.017334 35.804741-12.787408 71.609483-33.24726 99.741779-58.822074 28.132297-23.017334 51.14963-53.707112 66.494519-84.396891 7.672445-15.344889 17.902371-33.24726 20.459853-51.14963 15.344889-51.14963 17.902371-107.414224 2.557481-158.563854-12.787408-43.477186-38.362223-81.839409-71.609482-109.971706-15.344889-12.787408-30.689778-25.574815-48.592149-35.804741-15.344889-7.672445-30.689778-15.344889-48.592149-17.902371 12.787408 46.034667 23.017334 92.069335 35.804741 135.546521 2.557482 10.229926 5.114963 23.017334 5.114963 33.24726 2.557482 46.034667-15.344889 94.626816-46.034667 130.431557-28.132297 33.24726-69.052001 58.822075-112.529187 66.49452-46.034667 10.229926-97.184298 0-138.104002-25.574815-38.362223-25.574815-66.49452-63.937038-81.839409-104.856743-7.672445-23.017334-12.787408-48.592149-12.787407-74.166964-2.557482-56.264593 12.787408-109.971705 43.477185-156.006373 35.804741-53.707112 94.626816-92.069335 158.563855-109.971705-5.114963-17.902371-10.229926-35.804741-12.787408-53.707112-12.787408-38.362223-10.229926-81.839409 7.672445-115.086668 10.229926-20.459852 23.017334-38.362223 40.919704-51.149631C583.609483 25.574815 604.069335 12.787408 627.086668 5.114963m-148.333928 414.312006c-17.902371 17.902371-28.132297 40.919704-33.24726 63.937038-5.114963 20.459852-5.114963 43.477186 0 66.49452 5.114963 23.017334 17.902371 46.034667 38.362223 61.379556 15.344889 10.229926 35.804741 15.344889 56.264594 10.229926 35.804741-5.114963 63.937038-38.362223 63.937038-74.166964-2.557482-7.672445-2.557482-17.902371-5.114963-25.574815-12.787408-48.592149-25.574815-99.741779-38.362223-148.333928-30.689778 7.672445-58.822075 23.017334-81.839409 46.034667z"
+                                      fill="#E72D2C"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </figure>
+
+    <div class="headertop-down faa-float animated" onclick="headertop_down()">
+        <span><i class="ui chevron down icon" aria-hidden="true"></i></span>
+    </div>
+</div>
+
+
+<div id="content" class="site-content">
+    <div id="primary" class="content-area">
+
+        <main id="main" class="site-main" role="main">
+            <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;"><i class="ui envira icon" aria-hidden="true"></i> 文章</h1>
+
+            <!-- 中间内容 -->
+            <div class="m-container m-padded-tb-big">
+                <div class="ui container">
+                    <div class="ui stackable grid">
+                        <!-- 左边博客部分 -->
+                        <div class="eleven wide column">
+                            <!--  header  -->
+<!--                                <div class="ui segment m_div_rounded_corners">-->
+<!--                                    <div class="ui middle aligned two column grid">-->
+<!--                                        <div class="column">-->
+<!--                                            <h3 class="ui teal header">博客</h3>-->
+<!--                                        </div>-->
+<!--                                        <div class="right aligned column">-->
+<!--                                            共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}"> 14 </h2> 篇-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+                            <!-- 中间 -->
+                            <div class="">
+                                <!--  一个博客内容  -->
+                                <div class="m-padded-custom ">
+                                    <div class="ui segment m_div_rounded_corners parentDiv"  th:each="blog : ${page.content}">
+                                        <div class="ui middle aligned mobile reversed stackable grid">
+                                            <!--  左边九份  -->
+                                            <div class="eight wide column m-padded-tb">
+                                                <div class="item">
+                                                    <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-10-22</span>
+                                                </div>
+                                                <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m_black" th:text="${blog.title}">再不努力就老了</a></h3>
+                                                <p class="m-text" th:text="|${blog.description}......|">所谓成功的人，对于绝大多数人而言，也就是今天比昨天进步一点，心灵和行为日趋高尚的人。</p>
+                                                <div class="ui grid">
+                                                    <div class="eleven wide column">
+                                                        <div class="ui mini horizontal link list">
+                                                            <div class="item">
+                                                                <img src="https://picsum.photos/id/1004/100/100" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image">
+                                                                <div class="content">
+                                                                    <a href="#" class="header" th:text="${blog.user.nickName}" >姓名</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item">
+                                                                <i class="eye icon"></i><span th:text="${blog.views}">123</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right aligned five wide column">
+                                                        <a href="#" target="_blank" class="ui teal basic label m_padded-tiny m-text-thin" th:text="${blog.type.name}">认知升级</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--  右边八份  -->
+                                            <div class="eight wide column m_right_rounded_corners parentmagnifyimg" style="padding:0 !important;">
+                                                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                                    <img src="https://picsum.photos/id/10/800/650" th:src="@{${blog.firstPicture}}" alt="" class="ui image m_right_rounded_corners magnifyimg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                                <!--  一个博客内容  -->
+                                <!--                        <div class="ui vertical segment m-padded-tb" th:each="blog : ${page.content}">-->
+                                <!--                            <div class="ui middle aligned mobile reversed stackable grid">-->
+                                <!--                                &lt;!&ndash;  左边七份  &ndash;&gt;-->
+                                <!--                                <div class="eleven wide column">-->
+                                <!--                                    <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m_black" th:text="${blog.title}">再不努力就老了</a></h3>-->
+                                <!--                                    <p class="m-text" th:text="|${blog.description}......|">所谓成功的人，对于绝大多数人而言，就是今天比昨天更智慧的人，今天比昨天更慈悲的人，今天比昨天更宽容的人，今天比昨天更懂得爱的人，也就是今天比昨天进步一点，心灵和行为日趋高尚的人。</p>-->
+                                <!--                                    <div class="ui grid">-->
+                                <!--                                        <div class="eleven wide column">-->
+                                <!--                                            <div class="ui mini horizontal link list">-->
+                                <!--                                                <div class="item">-->
+                                <!--                                                    <img src="https://picsum.photos/id/1004/100/100" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image">-->
+                                <!--                                                    <div class="content">-->
+                                <!--                                                        <a href="#" class="header" th:text="${blog.user.nickName}" >姓名</a>-->
+                                <!--                                                    </div>-->
+                                <!--                                                </div>-->
+                                <!--                                                <div class="item">-->
+                                <!--                                                    <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-10-22</span>-->
+                                <!--                                                </div>-->
+                                <!--                                                <div class="item">-->
+                                <!--                                                    <i class="eye icon"></i><span th:text="${blog.views}">123</span>-->
+                                <!--                                                </div>-->
+                                <!--                                            </div>-->
+                                <!--                                        </div>-->
+                                <!--                                        <div class="right aligned five wide column">-->
+                                <!--                                            <a href="#" target="_blank" class="ui teal basic label m_padded-tiny m-text-thin" th:text="${blog.type.name}">认知升级</a>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+
+                                <!--                                &lt;!&ndash;  右边七份  &ndash;&gt;-->
+                                <!--                                <div class="five wide column">-->
+                                <!--                                    <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">-->
+                                <!--                                        <img src="https://picsum.photos/id/10/800/450" th:src="@{${blog.firstPicture}}" alt="" class="ui rounde image">-->
+                                <!--                                    </a>-->
+                                <!--                                </div>-->
+                                <!--                            </div>-->
+                                <!--                        </div>-->
+
+
+
+                            </div>
+
+                            <!--  底部  -->
+                            <!--  分页  -->
+                            <div class="ui bottom segment m_div_rounded_corners" th:if="${page.totalPages}>1" style="box-shadow: -10px 10px 20px -6px rgba(0,0,0,0.3) !important;">
+                                <div class="ui middle aligned two column grid">
+                                    <div class="column">
+                                        <a href="#" th:href="@{/(page=${page.number}-1)}" th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+                                    </div>
+                                    <div class="right aligned column">
+                                        <a href="#" th:href="@{/(page=${page.number}+1)}" th:unless="${page.last}" class="ui mini teal basic button">下一页</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- 右边卡片部分 -->
+                        <div class="five wide column">
+                            <!--  分类  -->
+                            <div class="ui segments" style="box-shadow: -10px 10px 20px -6px rgba(0,0,0,0.3) !important;">
+                                <div class="ui secondary segment">
+                                    <div class="ui two column grid">
+                                        <div class="column">
+                                            <i class="idea icon"></i>分类
+                                        </div>
+                                        <div class="right aligned column">
+                                            <a href="#" th:href="@{types/-1}" target="_blank">more <i class="angle double right icon"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui teal segment">
+                                    <div class="ui fluid vertical menu">
+                                        <a href="#" th:href="@{/types/{id}(id=${type.id})}" target="_blank" class="item" th:each="type : ${types}">
+                                            <span th:text="${type.name}">学习日志</span>
+                                            <div class="ui teal basic left pointing label" th:text="${#arrays.length(type.blogs)}">13</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--  标签  -->
+                            <div class="ui segments m-margin-top-large" style="box-shadow: -10px 10px 20px -6px rgba(0,0,0,0.3) !important;">
+                                <div class="ui secondary segment">
+                                    <div class="ui two column grid">
+                                        <div class="column">
+                                            <i class="tags icon"></i>标签
+                                        </div>
+                                        <div class="right aligned column">
+                                            <a href="#" th:href="@{tags/-1}" target="_blank">more <i class="angle double right icon"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui teal segment">
+                                    <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
+                                        <span th:text="${tag.name}">方法论</span>
+                                        <div class="detail" th:text="${#arrays.length(tag.blogs)}">13</div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--  最新推荐  -->
+                            <div class="ui segments m-margin-top-large" style="box-shadow: -10px 10px 20px -6px rgba(0,0,0,0.3) !important;">
+                                <div class="ui secondary segment">
+                                    <i class="bookmark icon"></i>最新推荐
+                                </div>
+                                <div class="ui segment" th:each="blog : ${recommendBlogs}">
+                                    <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black m-text-thin" th:text="${blog.title}">用户故事 (User Story)</a>
+                                </div>
+                            </div>
+
+                            <!--二维码-->
+                            <h4 class="ui horizontal divider header">扫码</h4>
+                            <div class="ui centered card"  style="width: 13em">
+                                <img src="https://picsum.photos/id/227/800/800" alt="" class="ui rounded image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+</div>
+</div>
+
+
+
+
+<br>
+<br>
+<br>
+<!--    底部    -->
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="http://pic1.win4000.com/pic/e/ed/3ee1756049.jpg" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事(User Story)</a>
+                    <a href="#" class="item">失败要趁早</a>
+                    <a href="#" class="item">关于</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Email：</a>
+                    <a href="#" class="item">QQ:</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-text-thin m-text-spaced">Blog</h4>
+                <p class="m-text-thin m-text-spaced m-opacity-mini">积极的人在每一次忧患中都看到一个机会，而消极的人则在每个机会都看到某种忧患。</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-thin m-text-spaced m-opacity-tiny">个人博客</p>
+    </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/moezx/cdn@3.7.5/js/lib.min.js?ver=3.1.5'></script>
+
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<!--/*/</th:block>/*/-->
+
+
+<!--  移动端点击三条横线出现标题等  -->
+<script>
+    $('.menu.toggle').click(function (){
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+
+    var Poi = {
+        "movies": {
+            "url": "https:\/\/picsum.photos\/id\/1032\/1920\/1080",
+            // "url": "https:\/\/cdn.jsdelivr.net\/gh\/moezx\/cdn@3.1.3\/",
+            "name": "The Pet Girl of Sakurasou",
+            "live": "close"
+        },
+        "windowheight": "fixed",
+        "codelamp": "close",
+        "ajaxurl": "#",
+        "order": "desc",
+        "formpostion": "bottom"
+    };
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+.inputBox{
+    border: 0 !important;
+    padding: 10px 10px !important;
+    border-bottom: 1px solid white !important;
+    background-color: #00000000 !important;
+    color: white !important;
+}
+
+.submitButton{
+    background-image: linear-gradient(-225deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4) !important;
+    background-size: 400% !important;
+}
+
+.submitButton:hover{
+    animation: sun 8s infinite !important;
+}
+
+@keyframes sun {
+    100%{
+        background-position: -400% 0;
+    }
+}
